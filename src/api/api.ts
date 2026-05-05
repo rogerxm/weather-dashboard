@@ -13,6 +13,7 @@ const api = axios.create({
   },
   params: {
     appid: API_KEY,
+    units: 'metric',
   },
 })
 
