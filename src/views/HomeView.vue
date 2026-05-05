@@ -3,8 +3,20 @@
     <CardContainer>
       <LoadingSpinner v-if="loading" />
 
+      <span v-else-if="error" class="text-red-500">
+        {{ error }}
+      </span>
+
       <div v-else>
         <SearchInput />
+
+        <h1 class="text-7xl text-center mt-8">
+          {{ weather?.main.temp.toFixed(1) }}°C
+        </h1>
+
+        <p class="text-center text-gray-500 mt-2">
+          {{ weather?.name }}
+        </p>
       </div>
     </CardContainer>
   </div>
